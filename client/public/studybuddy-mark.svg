@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34d399"/>
+      <stop offset=".52" stop-color="#059669"/>
+      <stop offset="1" stop-color="#022c22"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientTransform="matrix(37 38 -38 37 15 8)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="19" fill="#03130d"/>
+  <rect x="2" y="2" width="60" height="60" rx="19" fill="url(#bg)"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="18.5" stroke="#a7f3d0" stroke-opacity=".45"/>
+  <rect x="2" y="2" width="60" height="60" rx="19" fill="url(#shine)"/>
+  <path d="M32 24c-7-5-13-5-19-3v25c7-2 13-1 19 4m0-26c7-5 13-5 19-3v25c-7-2-13-1-19 4V24Z" stroke="#ecfdf5" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <path d="m47 12 1.4 3.6L52 17l-3.6 1.4L47 22l-1.4-3.6L42 17l3.6-1.4L47 12Z" fill="#ecfccb"/>
+</svg>

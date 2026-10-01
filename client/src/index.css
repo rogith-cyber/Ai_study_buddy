@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #020106;
+    color: #f1f5f9;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Dark Black Corner-to-Center Radial Vignette */
+.corner-gradient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.95) 0%, transparent 50%),
+    radial-gradient(circle at top right, rgba(4, 18, 13, 0.95) 0%, transparent 50%),
+    radial-gradient(circle at bottom left, rgba(2, 12, 9, 0.95) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(2, 12, 9, 0.95) 0%, transparent 50%),
+    radial-gradient(ellipse at center, rgba(5, 5, 5, 0.6) 0%, rgba(2, 1, 6, 0.98) 100%);
+}
+
+/* Background Flow Animation */
+@keyframes fluid-orbit-1 {
+  0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  33% { transform: translate(70px, -90px) scale(1.25) rotate(120deg); }
+  66% { transform: translate(-50px, 50px) scale(0.9) rotate(240deg); }
+  100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
+}
+
+@keyframes fluid-orbit-2 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-90px, -70px) scale(1.3); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.blob-green {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.24) 0%, rgba(34, 197, 94, 0) 70%);
+  filter: blur(100px);
+  z-index: 0;
+  animation: fluid-orbit-1 22s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.blob-emerald {
+  position: fixed;
+  bottom: 10%;
+  right: 15%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 70%);
+  filter: blur(110px);
+  z-index: 0;
+  animation: fluid-orbit-2 26s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.blob-mint {
+  position: fixed;
+  top: 45%;
+  right: 25%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, rgba(52, 211, 153, 0) 70%);
+  filter: blur(95px);
+  z-index: 0;
+  animation: fluid-orbit-1 19s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+/* Liquid Glassmorphism Styling */
+.liquid-glass-panel {
+  background: rgba(28, 29, 28, 0.68);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2.2rem;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.liquid-glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.8rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(34, 197, 94, 0.45);
+  box-shadow: 
+    0 15px 35px rgba(34, 197, 94, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.liquid-input {
+  background: rgba(5, 15, 10, 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-radius: 1.3rem;
+  transition: all 0.2s ease;
+}
+
+.liquid-input:focus {
+  border-color: rgba(34, 197, 94, 0.7);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.28);
+  outline: none;
+}
+
+.liquid-btn-primary {
+  background: #f8fafc;
+  color: #07130f;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(226, 232, 240, 0.16);
+  transition: all 0.3s ease;
+}
+
+.liquid-btn-primary:hover {
+  background: #e2e8f0;
+  box-shadow: 0 0 28px rgba(226, 232, 240, 0.24);
+  transform: translateY(-2px);
+}
+
+/* One visual system: every legacy accent resolves to emerald, never purple or pink. */
+[class*="text-purple"], [class*="text-pink"], [class*="text-cyan"], [class*="text-indigo"] { color: #6ee7b7 !important; }
+[class*="hover:text-purple"]:hover, [class*="hover:text-pink"]:hover, [class*="hover:text-cyan"]:hover, [class*="hover:text-indigo"]:hover { color: #bbf7d0 !important; }
+[class*="bg-purple"], [class*="bg-pink"], [class*="bg-cyan"], [class*="bg-indigo"] { background-color: rgba(16, 185, 129, 0.16) !important; }
+[class*="border-purple"], [class*="border-pink"], [class*="border-cyan"], [class*="border-indigo"] { border-color: rgba(52, 211, 153, 0.42) !important; }
+[class*="from-purple"], [class*="from-pink"], [class*="from-cyan"], [class*="from-indigo"] { --tw-gradient-from: #059669 var(--tw-gradient-from-position) !important; }
+[class*="via-purple"], [class*="via-pink"], [class*="via-cyan"], [class*="via-indigo"] { --tw-gradient-via: #22c55e var(--tw-gradient-via-position) !important; }
+[class*="to-purple"], [class*="to-pink"], [class*="to-cyan"], [class*="to-indigo"] { --tw-gradient-to: #86efac var(--tw-gradient-to-position) !important; }
+[class*="shadow-purple"], [class*="shadow-pink"], [class*="shadow-cyan"], [class*="shadow-indigo"] { --tw-shadow-color: rgba(16, 185, 129, 0.35) !important; }
+[class*="accent-purple"], [class*="accent-pink"], [class*="accent-cyan"], [class*="accent-indigo"] { accent-color: #10b981 !important; }
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020106;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
